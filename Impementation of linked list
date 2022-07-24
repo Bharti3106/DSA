@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+struct node
+{
+    int data;
+    node *next;
+};
+ node *head;
+void insert( int x)
+{
+   node *tmp = new node;
+        tmp->data = x;
+        tmp->next = head;
+        head = tmp;
+ 
+}
+void display()
+{
+        node *tmp;
+        tmp = head;
+        while (tmp != NULL)
+        {
+            cout << tmp->data <<" ";
+            tmp = tmp->next;
+        }
+}
+
+int main()
+{
+    head = NULL;
+    cout<<"How many numbers? \n";
+    int n,x,i;
+    cin>>n;
+    for(i =0 ; i < n ; i++)
+    {
+        cout<<" Enter number \n";
+        cin>>x;
+        insert(x);
+    }
+    display();
+    return 0;
+}
+
